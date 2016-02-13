@@ -1,0 +1,11 @@
+
+
+$ hadoop jar $HADOOP_PREFIX/hadoop-*examples*.jar teragen 524288 input                     
+
+$ hadoop jar $HADOOP_PREFIX/hadoop-*examples*.jar terasort input output                
+
+$ hadoop jar $HADOOP_PREFIX/hadoop-*test*.jar TestDFSIO -write -nrFiles 5 -fileSize 50          
+
+$ hadoop jar $HADOOP_PREFIX/hadoop-*test*.jar TestDFSIO -read -nrFiles 5 -fileSize 50
+
+$ hadoop jar $HADOOP_PREFIX/hadoop-*test*.jar TestDFSIO -clean
