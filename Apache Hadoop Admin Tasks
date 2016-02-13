@@ -1,0 +1,65 @@
+
+Decommisioning
+
+vi excludes
+ip-172-31-30-159.eu-west-1.compute.internal
+
+hdfs-site.xml
+
+<property>
+<name>dfs.hosts.exclude</name>
+<value>/usr/local/hadoop/conf/excludes</value>
+<final>true</final>
+
+
+• system file checker
+
+hadoop fsck -location -block -size
+
+hadoop fsck -
+
+hadoop  fsck  / >  /usr/local/hadoop/reports/fsck_dated.log
+
+
+
+
+
+hadoop fs -expunge
+
+_____________________________________________________________________________
+
+nano hdfs-site.xml
+
+Block Size 
+
+<property>
+<name>dfs.block.size</name>
+<value>134217728</value>
+</property>
+
+__________________________________________________________________________--
+
+hadoop version
+
+hadoop fs -ls /  ---------to check hadoop root
+
+hadoop fs -du hdfs:/  -------------disk usage
+
+hadoop fs -count hdfs:/ --------- file count
+
+hadoop fsck /    ------------ file system health checker 
+
+hadoop balancer  ---------Node balancing (will balance under and over replication)
+
+hadoop fs -expunge      ---------- remove file from trash
+
+hadoop fs -chmod 600 path
+
+hadoop archive -archiveName smallfiles.har -p /user/ubuntu/smallfiles /user/ubuntu/
+
+hadoop fs -ls 
+
+hadoop fs -lsr smallfiles.har
+
+hadoop fs -lsr har:///user/ubuntu/sachin.har
+ 
